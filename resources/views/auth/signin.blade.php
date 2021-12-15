@@ -34,6 +34,9 @@
                             <div class="d-grid mx-auto">
                                 <button type="submit" class="btn btn-success">Login</button>
                             </div>
+                            <div class="d-grid mx-auto">
+                                <a href="/register" class="btn btn-link">Register</a>
+                            </div>
                         </form>
                     </div>
                 </div>

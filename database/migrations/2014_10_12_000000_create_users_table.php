@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('User_Fname');
             $table->string('User_Lname');
             $table->string('User_Address');
-            $table->integer('ContactNo');
+            $table->bigInteger('ContactNo');
             $table->string('username');            
             $table->string('password');
             $table->string('user_type')->default('user');

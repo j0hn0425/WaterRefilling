@@ -17,11 +17,10 @@ class CreateManageOrdersTable extends Migration
             $table->increments('ManageOrd_id');
             $table->string('User_id');
             $table->integer('Product_id');
-            $table->integer('Order_id');
             $table->integer('Quantity');
             $table->float('Amount');
             $table->float('Total_amount');
-            $table->string('Date_Time');
+            $table->string('Date');
             $table->string('Status');
             $table->timestamps();
         });

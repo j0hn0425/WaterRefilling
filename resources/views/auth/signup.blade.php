@@ -67,6 +67,10 @@
                             <div class="d-grid mx-auto">
                                 <button type="submit" class="btn btn-primary btn-block">Register</button>
                             </div>
+                            <br>
+                            <div class="d-grid mx-auto">
+                                <a href="/login" class="btn btn-dark">Login</a>
+                            </div>
                         </form>
                     </div>
                 </div>

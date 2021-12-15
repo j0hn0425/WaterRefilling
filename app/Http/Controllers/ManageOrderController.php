@@ -97,13 +97,13 @@ class ManageOrderController extends Controller
         
         $data = $request->all();
         $saveManageOrder = $this->manageOrderSave($data);
-        $saveDeliver = $this->deliverSave($data);
+        //$saveDeliver = $this->deliverSave($data);
         
-        $order = DB::table('orders')
-                    ->where('Order_id', $id)
-                    ->update([
-                        'Status' => $request->input('status')
-                    ]);        
+        // $order = DB::table('orders')
+        //             ->where('Order_id', $id)
+        //             ->update([
+        //                 'Status' => $request->input('status')
+        //             ]);        
         
         
         // echo "Successfully updated!";
@@ -117,11 +117,10 @@ class ManageOrderController extends Controller
         return ManageOrder::create([
             'User_id' => Auth::id(),
             'Product_id' => $data['product_id'],
-            'Order_id' => $data['order_id'],
             'Quantity' => $data['quantity'],
             'Amount' => $data['rate'],
             'Total_amount' => $data['total_Amount'],
-            'Date_Time' => $date->toDateTimeString(),
+            'Datee' => $date->toDateString(),
             'Status' => 'Delivered',
         ]);
     }
@@ -133,7 +132,6 @@ class ManageOrderController extends Controller
         return Delivery::create([
             'Cus_id' => Auth::id(),
             'Product_id' => $data['product_id'],
-            'Order_id' => $data['order_id'],
             'Date_Delivered' => $date->toDateTimeString(),
             'status' => 'Delivered',
         ]);

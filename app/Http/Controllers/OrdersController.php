@@ -39,17 +39,17 @@ class OrdersController extends Controller
     	$rate = $request->input('Rate');
         $date = Carbon::now();
 
-    	$insertOrder = DB::table('orders')
+    	$insertOrder = DB::table('manage_orders')
     						->insert([
+                                'User_id' => Auth::id(),
     							'Product_id' => $request->input('prod_id'),
     							'Quantity' => $request->input('Quantity'),
-    							'Rate' => $request->input('Rate'),
-    							'Amount' => $request->input('Amount'),
-                                'created_at' => $date->toDateTimeString(),
-                                'User_id' => Auth::id()
+    							'Amount' => $request->input('Rate'),
+    							'Total_amount' => $request->input('Amount'),
+                                'Date' => $date->toDateString(),
+                                'Status' => "Deliver"
     						]);
-
-    	//dd($date->toDateTimeString());
+                            
     	//echo "Successfully Added!";
         return redirect("order")->withSuccess('Successfully Added!');
     }
